@@ -18,8 +18,3 @@ app.include_router(users.router)
     )
 def check_setup():
     return {"msg": "success"}
-
-# To add data about more books
-@app.post("/books_csv")
-def add_data(path):
-    pass

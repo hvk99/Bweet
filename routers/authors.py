@@ -1,12 +1,15 @@
 from fastapi import APIRouter
-from schemas import Book
+from schemas import Author
 
-router = APIRouter()
 
-# Get all authors by default
-#implement query parameter too
-@router.get("/authors")
-def add_books():
+router = APIRouter(
+    prefix="/author",
+    tags=["Author"]
+)
+
+
+@router.get("/")
+def get_authors():
     return {
         "msg": "All authors"
     }

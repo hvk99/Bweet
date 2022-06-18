@@ -4,8 +4,8 @@ from typing import List
 import pandas as pd
 
 router = APIRouter(
-    prefix="/books",
-    tags=["Books"]
+    prefix="/book",
+    tags=["Book"]
 )
 
 # This will be used to add more books to the database
