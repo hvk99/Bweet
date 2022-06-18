@@ -1,4 +1,4 @@
-import email
+from datetime import datetime
 from pydantic import BaseModel, EmailStr
 
 
@@ -15,10 +15,18 @@ class Book(BaseModel):
 
 class UserCreation(BaseModel):
     name: str
+    username: str
+    password: str
     email: EmailStr
+    
+    class Config:
+        orm_mode = True
 
 class UserOut(BaseModel):
     id: int
     name: str
     email: EmailStr
-    createdAt: str
+    createdAt: datetime
+
+    class Config:
+        orm_mode = True
