@@ -1,6 +1,7 @@
 from database import Base
 from sqlalchemy import Column, Integer, String, TIMESTAMP, ForeignKey
 from sqlalchemy.sql.expression import text
+from sqlalchemy.orm import relationship
 
 class Books(Base):
     __tablename__ = "book"
@@ -8,6 +9,8 @@ class Books(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     title = Column(String, nullable=False)
     authorId = Column(Integer, ForeignKey("author.id", ondelete="CASCADE"), nullable=False)
+
+    author = relationship("Author")
 
 
 class Author(Base):

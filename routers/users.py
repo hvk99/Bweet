@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Depends, status, HTTPException
-from pydantic import EmailStr
 from database import get_db
 import schemas
 from sqlalchemy.orm import Session

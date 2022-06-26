@@ -30,3 +30,11 @@ class UserOut(BaseModel):
 
     class Config:
         orm_mode = True
+
+class BookOut(BaseModel):
+
+    title: str
+    Author: Author
+
+    class Config:
+        orm_mode = True
